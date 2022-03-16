@@ -5,7 +5,20 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#FFDCDC',
+        secondary: '#3C3838',
+        footer: '#6804bc'
+      },
+      fontFamily: {
+        title: ["Abel", 'sans-serif'],
+        paragraph: ["Advent Pro", 'sans-serif']
+      }
+    },
   },
   plugins: [],
+  images: {
+    domains: ['placeholder.com'],
+  },
 }
