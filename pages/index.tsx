@@ -3,6 +3,16 @@ import Image from 'next/image';
 
 const IndexPage = () => {
   const now = new Date();
+  const drawings = [...Array(18)].map((_, i) =>
+    i === 17 ? '/drawings/18.gif' : `/drawings/${i + 1}.jpg`
+  );
+  const portifolio = (() => {
+    const result: Array<Array<string>> = [];
+    for (let i = 3; i < 6; i++) {
+      result.push(drawings.filter((_, j) => (j + i) % 3 === 0));
+    }
+    return result;
+  })();
   return (
     <Fragment>
       <div className='flex flex-col-reverse md:flex-row justify-between gap-3 items-center my-24 mx-4 md:mx-10'>
@@ -22,7 +32,17 @@ const IndexPage = () => {
       </div>
       <div id='portifolio' className='bg-secondary py-44 w-full text-white'>
         <h2 className='text-center underline font-title text-7xl'>Portfólio</h2>
-        <div className='grid md:grid-cols-3 grid-cols-1 mx-2'></div>
+        <div className='grid md:grid-cols-3 grid-cols-1 mx-2 gap-3'>
+          {portifolio.map((arr, i) => (
+            <div
+              key={i}
+              className='flex flex-col items-center overflow-hidden gap-3'>
+              {arr.map((image: string, i) => (
+                <img key={i} src={image} alt='desenho' className='rounded-lg' />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
       <div
         id='currículo'
@@ -34,151 +54,249 @@ const IndexPage = () => {
         </div>
         <div className='grid grid-cols-3 gap-8'>
           <div className='flex flex-col items-center gap-20'>
-            <div>
+            <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Ferramentas</h3>
               <p className='font-light text-xl'>Digitais</p>
+              <div className='flex flex-col mt-8 text-lg'>
+                <div className='flex justify-between items-center'>
+                  <p>Ai</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Ps</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Krita</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Figma</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
+            <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Ferramentas</h3>
               <p className='font-light text-xl'>Tradicionais</p>
+              <div className='flex flex-col mt-8 text-lg'>
+                <div className='flex justify-between items-center'>
+                  <p>Caneta</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Aquarela</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex flex-col mt-8 text-lg'>
+                  <div className='flex justify-between items-center'>
+                    <p>Caneta</p>
+                    <div className='flex gap-1'>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full border border-black'></div>
+                      <div className='h-2 w-2 rounded-full border border-black'></div>
+                    </div>
+                  </div>
+                  <div className='flex justify-between items-center'>
+                    <p>Lápis</p>
+                    <div className='flex gap-1'>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full bg-black'></div>
+                      <div className='h-2 w-2 rounded-full border border-black'></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
+            <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Educação</h3>
+              <p className='text-justify text-xl mt-10'>
+                Universiade Federal do Ceará, Sistemas e Mídias
+                Digitais.(2018-2024)
+              </p>
             </div>
           </div>
           <div className='flex flex-col items-center gap-20'>
-            <div>
+            <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Habilidades</h3>
+              <div className='flex flex-col mt-8 text-lg'>
+                <div className='flex justify-between items-center'>
+                  <p>Ilustração Digital</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Ilustração Tradicional</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Animação</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+              </div>
             </div>
             <Image src='/draw.png' width={360} height={660} />
           </div>
           <div className='flex flex-col items-center gap-20'>
-            <div>
-              <h3 className='underline text-4xl'>Idiomas</h3>
-            </div>
-            <div>
-              <h3 className='underline text-4xl'>Interesses</h3>
-            </div>
-            <div>
+            <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Soft skills</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id='footer' className='bg-footer pb-20 pt-44 w-full text-white'>
-        <h2 className='text-center underline font-title text-7xl mb-20'>
-          Contatos
-        </h2>
-        <div className='flex gap-8 justify-between mx-2 md:mx-10'>
-          <div className='flex items-center gap-5'>
-            <div className='flex flex-col text-center items-center gap-1'>
-              <h3 className='underline text-4xl'>Ilustradora</h3>
-              <div className='my-4'>
-                <Image
-                  src='/profile.png'
-                  width={120}
-                  height={120}
-                  className='rounded-full'
-                />
-              </div>
-              <p className='font-light text-xl'>Danielle Alicia</p>
-              <p className='font-light text-xl'>Alves Fernandes</p>
-            </div>
-            <div className='flex flex-col gap-5'>
-              <div className='flex items-center gap-3'>
-                <div className='text-gray-500 bg-white rounded-full p-2'>
-                  <svg
-                    className='w-6 h-6'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-                    />
-                  </svg>
+              <div className='flex flex-col mt-8 text-lg'>
+                <div className='flex justify-between items-center'>
+                  <p>Comunicação</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
                 </div>
-                <p className='font-light'>danielle.alicia3006@alu.ufc.br</p>
-              </div>
-              <a
-                href='https://www.instagram.com/daniellealiciaalves/'
-                className='flex items-center gap-3'>
-                <div className='text-gray-500 bg-white rounded-full p-2'>
-                  <svg
-                    className='w-6 h-6'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207'
-                    />
-                  </svg>
+                <div className='flex justify-between items-center'>
+                  <p>Cooperação</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
                 </div>
-                <p className='font-light'>@daniellealiciaalves</p>
-              </a>
+                <div className='flex justify-between items-center'>
+                  <p>Criatividade</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Organização</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Pesquisa</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Trabalho em Equipe</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className='border self-stretch'></div>
-          <div className='flex items-center gap-5'>
-            <div className='flex flex-col text-center items-center gap-1'>
-              <h3 className='underline text-4xl'>Ajuda Salvadora</h3>
-              <div className='my-4'>
-                <Image
-                  src='/profile.png'
-                  width={120}
-                  height={120}
-                  className='rounded-full'
-                />
+            <div className='w-full max-w-xs'>
+              <h3 className='underline text-4xl'>Idiomas</h3>
+              <div className='flex flex-col mt-8 text-lg'>
+                <div className='flex justify-between items-center'>
+                  <p>Inglês</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Espanhol</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <p>Yorubá</p>
+                  <div className='flex gap-1'>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                  </div>
+                </div>
               </div>
-              <p className='font-light text-xl'>Victor Furtado</p>
-              <p className='font-light text-xl underline'>
-                Fullstack Developer
-              </p>
             </div>
-            <div className='flex flex-col gap-5'>
-              <div className='flex items-center gap-3'>
-                <div className='text-gray-500 bg-white rounded-full p-2'>
-                  <svg
-                    className='w-6 h-6'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-                    />
-                  </svg>
-                </div>
-                <p className='font-light'>victor.furtado@devpunk.page</p>
-              </div>
-              <a href='https://github.com/' className='flex items-center gap-3'>
-                <div className='text-gray-500 bg-white rounded-full p-2'>
-                  <svg
-                    className='w-6 h-6'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'
-                    />
-                  </svg>
-                </div>
-                <p className='font-light'>Victor-Furtado</p>
-              </a>
+            <div className='w-full max-w-xs'>
+              <h3 className='underline text-4xl'>Interesses</h3>
             </div>
           </div>
         </div>
