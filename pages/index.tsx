@@ -46,7 +46,7 @@ const IndexPage = () => {
       </div>
       <div
         id='currículo'
-        className='text-center font-paragraph mx-4 md:mx-10 py-44'>
+        className='hidden md:block text-center font-paragraph mx-4 md:mx-10 py-44'>
         <h2 className='underline font-title text-7xl'>Currículo</h2>
         <div className='text-4xl font-light mt-16'>
           <p className='mb-5'>Danielle Alícia Alves Fernandes</p>
