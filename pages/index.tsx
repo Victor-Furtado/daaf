@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 const IndexPage = () => {
   const now = new Date();
+  const interests = [...Array(7)].map((_, i) => `/interests/${i + 1}.png`);
   const drawings = [...Array(18)].map((_, i) =>
     i === 17 ? '/drawings/18.gif' : `/drawings/${i + 1}.jpg`
   );
@@ -30,9 +31,9 @@ const IndexPage = () => {
           className=' rounded-full'
         />
       </div>
-      <div id='portifolio' className='bg-secondary py-44 w-full text-white'>
+      <div id='portifolio' className='bg-secondary py-24 w-full text-white'>
         <h2 className='text-center underline font-title text-7xl'>Portfólio</h2>
-        <div className='grid md:grid-cols-3 grid-cols-1 mx-2 gap-3'>
+        <div className='grid md:grid-cols-3 grid-cols-1 mx-2 gap-3 mt-32'>
           {portifolio.map((arr, i) => (
             <div
               key={i}
@@ -73,7 +74,7 @@ const IndexPage = () => {
                   <div className='flex gap-1'>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                   </div>
@@ -110,8 +111,8 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                   </div>
                 </div>
                 <div className='flex justify-between items-center'>
@@ -120,30 +121,8 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
-                  </div>
-                </div>
-                <div className='flex flex-col mt-8 text-lg'>
-                  <div className='flex justify-between items-center'>
-                    <p>Caneta</p>
-                    <div className='flex gap-1'>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full border border-black'></div>
-                      <div className='h-2 w-2 rounded-full border border-black'></div>
-                    </div>
-                  </div>
-                  <div className='flex justify-between items-center'>
-                    <p>Lápis</p>
-                    <div className='flex gap-1'>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full bg-black'></div>
-                      <div className='h-2 w-2 rounded-full border border-black'></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -167,7 +146,7 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                   </div>
                 </div>
                 <div className='flex justify-between items-center'>
@@ -177,7 +156,7 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                   </div>
                 </div>
                 <div className='flex justify-between items-center'>
@@ -185,8 +164,8 @@ const IndexPage = () => {
                   <div className='flex gap-1'>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                   </div>
                 </div>
@@ -204,7 +183,7 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                   </div>
                 </div>
@@ -225,7 +204,7 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                   </div>
                 </div>
                 <div className='flex justify-between items-center'>
@@ -235,7 +214,7 @@ const IndexPage = () => {
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full bg-black'></div>
                   </div>
                 </div>
                 <div className='flex justify-between items-center'>
@@ -278,8 +257,8 @@ const IndexPage = () => {
                   <div className='flex gap-1'>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                   </div>
                 </div>
@@ -288,8 +267,8 @@ const IndexPage = () => {
                   <div className='flex gap-1'>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
                     <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
-                    <div className='h-2 w-2 rounded-full bg-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
+                    <div className='h-2 w-2 rounded-full border border-black'></div>
                     <div className='h-2 w-2 rounded-full border border-black'></div>
                   </div>
                 </div>
@@ -297,6 +276,11 @@ const IndexPage = () => {
             </div>
             <div className='w-full max-w-xs'>
               <h3 className='underline text-4xl'>Interesses</h3>
+              <div className='flex gap-1 justify-center flex-wrap mt-8'>
+                {interests.map((link, i) => (
+                  <Image src={link} height={64} width={64} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
