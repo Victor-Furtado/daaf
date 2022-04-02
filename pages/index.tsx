@@ -24,7 +24,7 @@ const IndexPage = () => {
           experiências e ambientes que agreguem na minha formação profissional.
         </p>
         <Image
-          src='/photo.png'
+          src='/photo.jpg'
           width={510}
           height={510}
           layout='intrinsic'
@@ -39,7 +39,12 @@ const IndexPage = () => {
               key={i}
               className='flex flex-col items-center overflow-hidden gap-3'>
               {arr.map((image: string, i) => (
-                <img key={i} src={image} alt='desenho' className='rounded-lg' />
+                <img
+                  key={'img-' + i}
+                  src={image}
+                  alt='desenho'
+                  className='rounded-lg'
+                />
               ))}
             </div>
           ))}
